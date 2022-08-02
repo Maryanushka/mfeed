@@ -1,0 +1,23 @@
+.auth-login {
+	background-color: #323232;
+	min-height: calc(100vh - 65px);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		color: var(--main-text);
+	}
+	h1 {
+		font-weight: 600;
+		font-size: 2rem;
+	}
+	form {
+		display: flex;
+		flex-direction: column;
+		margin-top: 3rem;
+		min-width: 30vw;
+	}
+}

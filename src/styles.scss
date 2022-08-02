@@ -1,0 +1,113 @@
+@use '@angular/material' as mat;
+/* You can add global styles to this file, and also import other style files */
+
+$pink-palette: (
+ 50: #FDECF7,
+ 100: #FAC7E6,
+ 200: #F7A1D5,
+ 300: #F47CC4,
+ 400: #F47CC4,
+ 500: #F15BB5,
+ 600: #ED31A2,
+ 700: #CE1283,
+ 800: #A90F6B,
+ 900: #710A47,
+ // ... continues to 900
+ contrast: (
+   50:  rgba(#260318, 1),
+   100: rgba(#260318, 1),
+   200: rgba(#260318, 1),
+   300: rgba(#260318, 1),
+   400: rgba(#260318, 1),
+   500: rgba(#FDECF7, 1),
+   600: rgba(#FDECF7, 1),
+   700: rgba(#FDECF7, 1),
+   800: rgba(#FDECF7, 1),
+   900: rgba(#FDECF7, 1),
+   // ... continues to 900
+ )
+);
+$green-palette: (
+ 50: #EBFFFC,
+ 100: #C4FDF5,
+ 200: #9DFBEF,
+ 300: #75FAE8,
+ 400: #4EF9E2,
+ 500: #17F6D8,
+ 600: #09ECCE,
+ 700: #07C5AC,
+ 800: #058A78,
+ 900: #023B33,
+ // ... continues to 900
+ contrast: (
+   50:  rgba(#012722, 1),
+   100: rgba(#012722, 1),
+   200: rgba(#012722, 1),
+   300: rgba(#012722, 1),
+   400: rgba(#012722, 1),
+   500: rgba(#012722, 1),
+   600: rgba(#EBFFFC, 1),
+   700: rgba(#EBFFFC, 1),
+   800: rgba(#EBFFFC, 1),
+   900: rgba(#EBFFFC, 1),
+   // ... continues to 900
+ )
+);
+
+$custom-primary: mat.define-palette($pink-palette);
+$custom-accent: mat.define-palette($green-palette);
+$custom-typography: mat.define-typography-config(
+  $font-family: 'Rubik'
+	);
+  // $font-family: 'Nunito'
+@include mat.core($custom-typography);
+
+$dark-theme: mat.define-dark-theme((
+	color: (
+		primary: $custom-primary,
+		accent: $custom-accent,
+	),
+	typography: $custom-typography,
+));
+@include mat.core-theme($dark-theme);
+@include mat.button-theme($dark-theme);
+
+// @include mat.all-component-themes($my-theme);
+// @include mat.core-theme($my-theme);
+
+
+// .kids-theme {
+//   $kids-primary: mat.define-palette(mat.$cyan-palette);
+//   $kids-accent: mat.define-palette(mat.$yellow-palette);
+//   $kids-typography: mat.define-typography-config(
+//     $font-family: 'Nurito',
+//   );
+
+//   $kids-theme: mat.define-light-theme((
+//    color: (
+//      primary: $my-primary,
+//      accent: $my-accent,
+//    ),
+//    typography: $kids-typography,
+//   ));
+
+//   @include mat.all-component-themes($kids-theme);
+// }
+
+:root {
+  --main-color: #F15BB5;
+  --main-accent: #00F5D4;
+  --pane-padding: 5px 42px;
+	--main-text: hsl(0, 0%, 97%);
+}
+
+// $my-custom-level: mat.define-typography-level(
+//   $font-family: Nunito,
+//   $font-weight: 400,
+//   $font-size: 1rem,
+//   $line-height: 1,
+//   $letter-spacing: normal,
+// );
+// @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;800&display=swap');
+// html, body { height: 100%; }
+// body { margin: 0; font-family: "Nunito", sans-serif; }
