@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms'; 
 import {ErrorStateMatcher} from '@angular/material/core';
+import { Store } from '@ngrx/store/src';
+import { registerAction } from '../store/actions/register.action';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -21,7 +23,7 @@ export class RegisterComponent implements OnInit {
   matcher = new MyErrorStateMatcher();
 	form: FormGroup;
 
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder, private store: Store) { }
 
   ngOnInit(): void {
 		this.initializeForm()
@@ -33,11 +35,12 @@ export class RegisterComponent implements OnInit {
 			email: ['', [Validators.required, Validators.email]],
 			password: ['', [Validators.required, Validators.minLength(4)]],
 		})
-
+		console.log(this.form.valid);
+		
 	}
 
 	onSubmit(): void{
-		console.log(this.form.valid, );
-		
+		console.log(this.form.valid, this.form.value);
+		this.store.dispatch(registerAction(this.form.value))
 	}
 }

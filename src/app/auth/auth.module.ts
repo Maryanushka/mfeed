@@ -10,7 +10,6 @@ import { MatButtonModule } from '@angular/material/button';
 import { RegisterComponent } from "src/app/auth/components/register/register.component";
 import { LoginComponent } from 'src/app/auth/components/login/login.component'; 
 
-
 const routes: Routes = [
 	{
 		path: 'register',

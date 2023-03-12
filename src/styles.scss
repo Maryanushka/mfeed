@@ -72,6 +72,10 @@ $dark-theme: mat.define-dark-theme((
 @include mat.core-theme($dark-theme);
 @include mat.button-theme($dark-theme);
 
+body {
+	margin: 0;
+}
+
 // @include mat.all-component-themes($my-theme);
 // @include mat.core-theme($my-theme);
 
