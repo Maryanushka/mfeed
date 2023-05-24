@@ -9,6 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { RegisterComponent } from "src/app/auth/components/register/register.component";
 import { LoginComponent } from 'src/app/auth/components/login/login.component'; 
+import { StoreModule } from "@ngrx/store";
+import { reducers } from "./components/store/reducers";
 
 const routes: Routes = [
 	{
@@ -22,8 +24,16 @@ const routes: Routes = [
 ]
 
 @NgModule({
-	imports: [CommonModule, RouterModule.forChild(routes),MatInputModule,
-		MatFormFieldModule,ReactiveFormsModule,MatButtonModule, ReactiveFormsModule],
+	imports: [
+		CommonModule, 
+		RouterModule.forChild(routes),
+		MatInputModule,
+		MatFormFieldModule,
+		ReactiveFormsModule,
+		MatButtonModule, 
+		ReactiveFormsModule,
+		StoreModule.forFeature('auth', reducers)
+	],
 	declarations: [RegisterComponent, LoginComponent]
 })
 
