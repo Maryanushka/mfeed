@@ -1,5 +1,6 @@
 @use '@angular/material' as mat;
 /* You can add global styles to this file, and also import other style files */
+@include mat.core();
 
 $pink-palette: (
  50: #FDECF7,
@@ -58,9 +59,9 @@ $custom-primary: mat.define-palette($pink-palette);
 $custom-accent: mat.define-palette($green-palette);
 $custom-typography: mat.define-typography-config(
   $font-family: 'Rubik'
-	);
+);
   // $font-family: 'Nunito'
-@include mat.core($custom-typography);
+// @include mat.core($custom-typography);
 
 $dark-theme: mat.define-dark-theme((
 	color: (
@@ -69,11 +70,14 @@ $dark-theme: mat.define-dark-theme((
 	),
 	typography: $custom-typography,
 ));
-@include mat.core-theme($dark-theme);
-@include mat.button-theme($dark-theme);
+@include mat.all-component-themes($dark-theme);
+// @include mat.button-theme($dark-theme);
 
 body {
 	margin: 0;
+	h1, h2, h3, h4, h5 {
+		font-family: "Rubik";
+	}
 }
 
 // @include mat.all-component-themes($my-theme);

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms'; 
 import {ErrorStateMatcher} from '@angular/material/core';
-import { Store } from '@ngrx/store/src';
+import { Store } from '@ngrx/store';
 import { registerAction } from '../store/actions/register.action';
 
 /** Error when invalid control is dirty, touched, or submitted. */
