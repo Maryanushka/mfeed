@@ -29,7 +29,7 @@ const routes: Routes = [
 		MatFormFieldModule,
 		ReactiveFormsModule,
 		MatButtonModule,
-		ReactiveFormsModule
+		ReactiveFormsModule,
 	],
 	declarations: [
 		RegisterComponent,
