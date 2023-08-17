@@ -10,7 +10,7 @@
 						value=""
 						formControlName="name"
 						>
-						<mat-error *ngIf="!form.errors?.['required']">
+						<mat-error *ngIf="form.controls['name'].value.length === 0">
 							Please enter a name
 						</mat-error>
 				</mat-form-field>
@@ -18,21 +18,19 @@
 		
 				<mat-form-field class="example-full-width" appearance="fill">
 					<mat-label>Email</mat-label>
+					<!-- [errorStateMatcher]="matcher"
+					[formControl]="emailFormControl"  -->
 					<input 
 						type="email" 
 						matInput 
-						[formControl]="emailFormControl" 
-						[errorStateMatcher]="matcher"
 						placeholder="your_email@example.com"
 						formControlName="email"
 						>
-					<!-- <mat-hint>Errors appear instantly!</mat-hint> -->
-					<!-- <mat-error *ngIf="form.errors?.['email'] && !form.errors?.['required']">
-						Please enter a valid email address
-					</mat-error> -->
-					<mat-error *ngIf="form.errors?.['email']">
-						Email is <strong>required</strong>
+					
+					<mat-error *ngIf="!form.controls['email'].valid">
+						Please type valid email
 					</mat-error>
+			
 				</mat-form-field>
 				<mat-form-field class="example-full-width" appearance="fill">
 					<mat-label>Password</mat-label>
@@ -42,13 +40,13 @@
 						type="password" 
 						formControlName="password"
 						>
-						<mat-error *ngIf="form.errors?.['password'] && !form.errors?.['required']">
-							Enter minimum 4 character  
-						</mat-error>
-						<mat-error *ngIf="form.errors?.['required']">
+						<mat-error *ngIf="form.controls['password'].invalid && form.controls['password'].value.length === 0">
 							Password is <strong>required</strong>
 						</mat-error>
-				</mat-form-field>
+						<mat-error *ngIf="form.controls['password'].value.length < 4">
+							Enter minimum 4 character  
+						</mat-error>
+					</mat-form-field>
 
 				<button 
 						mat-raised-button 
