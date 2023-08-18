@@ -1,6 +1,7 @@
 <div class="auth-register">
 	<div class="container">
 		<h1>Register</h1>
+		<!-- {{isSubmitting$ | async}} -->
 		<a [routerLink]="['/login']" mat-button color="accent">Already have an account ? Login!</a>
 		<form [formGroup]="form" (ngSubmit)="onSubmit()">
 				<mat-form-field class="example-full-width" appearance="fill">
@@ -54,6 +55,7 @@
 						matRipple 
 						mat-button
 						type="submit"
+						[disabled]="isSubmitting$ | async"
 						>
 						Sign up
 				</button>

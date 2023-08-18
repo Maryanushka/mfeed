@@ -9,6 +9,8 @@ import { MatButtonModule } from '@angular/material/button';
 
 import { RegisterComponent } from "src/app/auth/components/register/register.component";
 import { LoginComponent } from 'src/app/auth/components/login/login.component'; 
+import { StoreModule } from "@ngrx/store";
+import { authFeature } from "./components/store/reducers/auth.reducer";
 
 const routes: Routes = [
 	{
@@ -30,6 +32,7 @@ const routes: Routes = [
 		ReactiveFormsModule,
 		MatButtonModule,
 		ReactiveFormsModule,
+		StoreModule.forFeature(authFeature)
 	],
 	declarations: [
 		RegisterComponent,

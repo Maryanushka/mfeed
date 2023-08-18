@@ -1,5 +1,7 @@
+@use 'sass:map';
 @use '@angular/material' as mat;
 /* You can add global styles to this file, and also import other style files */
+@include mat.core();
 
 $pink-palette: (
  50: #FDECF7,
@@ -59,19 +61,17 @@ $custom-accent: mat.define-palette($green-palette);
 $custom-typography: mat.define-typography-config(
   $font-family: 'Rubik'
 	);
-  // $font-family: 'Nunito'
-// @include mat.core($custom-typography);
 
-$dark-theme: mat.define-dark-theme((
+$theme: mat.define-dark-theme((
 	color: (
 		primary: $custom-primary,
 		accent: $custom-accent,
 	),
 	typography: $custom-typography,
+	destiny: 0
 ));
-@include mat.core-theme($dark-theme);
-@include mat.button-theme($dark-theme);
-
+@include mat.core-theme($theme);
+@include mat.all-component-themes($theme);
 body {
 	margin: 0;
 }
