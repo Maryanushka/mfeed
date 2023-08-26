@@ -1,5 +1,5 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, inject } from '@angular/core';
 import { IAuthRequest } from '../../types/authRequest.interface';
 import { Observable, map, of } from 'rxjs';
 import { environment } from '../../../../environments/environment';
@@ -10,20 +10,14 @@ import { IAuthResponce } from '../../types/authResponce.interface';
   providedIn: 'root'
 })
 export class AuthService {
+	http = inject(HttpClient)
 
-  constructor(private http: HttpClient) { }
-
-	register(data: IAuthResponce): Observable<ICurrentUser> {
+	register(data: IAuthRequest): Observable<ICurrentUser> {
 		const url = `${environment.apiUrl}/users`
-		console.log(data);
 		
 		return this.http
 		.post<IAuthResponce>(url, data)
-		.pipe(map((responce: IAuthResponce) => {
-			console.log(responce);
-			
-			return responce.user
-		}))
+		.pipe(map((responce: IAuthResponce) => responce.user))
 		
 	}
 }

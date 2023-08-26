@@ -2,12 +2,13 @@ import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms'; 
 import {ErrorStateMatcher} from '@angular/material/core';
 import { Store, select } from '@ngrx/store';
-import { registerAction } from '../store/actions/auth.action';
+import { authActions } from '../store/auth.action';
 import { Observable } from 'rxjs';
-import { isSubmittingSelector } from '../store/selectors/auth.selectors';
+import { isSubmittingSelector } from '../store/auth.selectors';
 import { AuthService } from '../../services/auth/auth.service';
 import { IAuthRequest } from '../../types/authRequest.interface';
 import { IAuthResponce } from '../../types/authResponce.interface';
+import { ActionTypes } from '../store/actionTypes';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 // export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -52,17 +53,8 @@ export class RegisterComponent implements OnInit {
 
 	onSubmit(): void{
 		console.log(this.form.valid, this.form.value);
-		this.store.dispatch(registerAction(this.form.value))
-		const user: IAuthResponce = {user: this.form.value}
-		this.authService.register(user).subscribe({
-			next(value) {
-					console.log(value);
-					
-			},
-			error(err) {
-					console.log(err);
-					
-			},
-		})
+		const request: IAuthRequest = { user: this.form.value }
+		this.store.dispatch(authActions.authRegister({request}))
+
 	}
 }

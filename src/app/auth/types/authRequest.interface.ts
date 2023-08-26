@@ -1,5 +1,7 @@
 export interface IAuthRequest {
-	name: string, 
-	email: string, 
-	password: string
+	user: {
+		name: string, 
+		email: string, 
+		password: string
+	}
 }
