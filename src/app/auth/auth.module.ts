@@ -15,6 +15,7 @@ import { AuthService } from "./services/auth/auth.service";
 import { EffectsModule } from "@ngrx/effects";
 import { AuthEffects } from "./components/store/auth.effects";
 import { BackendErrorMessagesModule } from "../shared/modules/backendErrorMessages/backendErrorMessages.module";
+import { PersistanceService } from "../shared/services/persistance.service";
 
 const routes: Routes = [
 	{
@@ -45,7 +46,8 @@ const routes: Routes = [
 		LoginComponent
 	],
 	providers: [
-		AuthService
+		AuthService,
+		PersistanceService
 	]
 })
 
