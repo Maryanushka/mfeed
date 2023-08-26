@@ -19,10 +19,10 @@ export class AuthEffects {
 		switchMap(({request}) => {
 			return this.authService.register(request).pipe(
 				map((currentUser: ICurrentUser) => {
-					return authActions.authRegisterSuccess({currentUser})
+					return authActions.authRegisterSuccess({currentUser: currentUser})
 				}),
 				catchError((errrorResponse: HttpErrorResponse) => {
-					return of(authActions.authRegisterFailure({errors: errrorResponse.error.errors}))
+					return of(authActions.authRegisterFailure({validationErrors: errrorResponse.error.errors}))
 				})
 			)
 		})

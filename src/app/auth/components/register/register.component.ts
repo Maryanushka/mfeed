@@ -55,6 +55,6 @@ export class RegisterComponent implements OnInit {
 		console.log(this.form.valid, this.form.value);
 		const request: IAuthRequest = { user: this.form.value }
 		this.store.dispatch(authActions.authRegister({request}))
-
+		this.authService.register(request).subscribe({})
 	}
 }

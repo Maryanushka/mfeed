@@ -22,6 +22,7 @@ import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { HttpClientModule } from '@angular/common/http';
+import { environment } from '../environments/environment';
 
 @NgModule({
   declarations: [
@@ -43,8 +44,9 @@ import { HttpClientModule } from '@angular/common/http';
 		StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
     StoreDevtoolsModule.instrument({
-      logOnly: !isDevMode(),
+      logOnly: environment.production,
       maxAge: 25,
+			trace: true
     }),
   ],
   providers: [],

@@ -6,10 +6,10 @@ import { IBackendErrors } from '../../types/backendError.interface';
 
 
 export const authActions = createActionGroup({
-  source: 'Auth',
+  source: 'Auththentication',
   events: {
     'Auth Register': props<{ request: IAuthRequest }>(),
     'Auth Register Success': props<{ currentUser: ICurrentUser }>(),
-    'Auth Register Failure': props<{ errors: IBackendErrors }>(),
+    'Auth Register Failure': props<{ validationErrors: IBackendErrors }>(),
   }
 });
