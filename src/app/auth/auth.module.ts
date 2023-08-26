@@ -10,7 +10,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { RegisterComponent } from "src/app/auth/components/register/register.component";
 import { LoginComponent } from 'src/app/auth/components/login/login.component'; 
 import { StoreModule } from "@ngrx/store";
-import { authKey, authReducer, authFeature } from "./components/store/auth.reducer";
+import { AUTH_KEY, authReducer } from "./components/store/auth.reducer";
 import { AuthService } from "./services/auth/auth.service";
 import { EffectsModule } from "@ngrx/effects";
 import { AuthEffects } from "./components/store/auth.effects";
@@ -35,7 +35,7 @@ const routes: Routes = [
 		ReactiveFormsModule,
 		MatButtonModule,
 		ReactiveFormsModule,
-		StoreModule.forFeature(authKey, authReducer),
+		StoreModule.forFeature(AUTH_KEY, authReducer),
 		EffectsModule.forFeature([AuthEffects]),
 	],
 	declarations: [

@@ -2,7 +2,7 @@ import { Action, createFeature, createReducer, on } from "@ngrx/store";
 import { authActions } from './auth.action'
 import { IAuthState } from "../../types/authState.interface";
 
-export const authKey = "AUTH" 
+export const AUTH_KEY = "AUTH" 
 
 export const initialState: IAuthState = {
 	isSubmitting: false,
@@ -11,7 +11,7 @@ export const initialState: IAuthState = {
 	validationErrors: null
 }
 
-export const reducer = createReducer(
+export const authReducer = createReducer(
 	initialState, 
 	on(authActions.authRegister, (state): IAuthState => ({
 			...state,
@@ -33,15 +33,3 @@ export const reducer = createReducer(
 		})
 	),
 )
-
-console.log(reducer);
-
-
-export const authFeature = createFeature({
-  name: authKey,
-  reducer: reducer,
-});
-
-export function authReducer(state: IAuthState, action: Action) {
-  return reducer(state, action);
-}
