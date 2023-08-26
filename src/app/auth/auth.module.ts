@@ -14,6 +14,7 @@ import { authFeature } from "./components/store/auth.reducer";
 import { AuthService } from "./services/auth/auth.service";
 import { EffectsModule } from "@ngrx/effects";
 import { AuthEffects } from "./components/store/auth.effects";
+import { BackendErrorMessagesModule } from "../shared/modules/backendErrorMessages/backendErrorMessages.module";
 
 const routes: Routes = [
 	{
@@ -34,6 +35,7 @@ const routes: Routes = [
 		MatFormFieldModule,
 		ReactiveFormsModule,
 		MatButtonModule,
+		BackendErrorMessagesModule,
 		ReactiveFormsModule,
 		EffectsModule.forFeature([AuthEffects]),
 		StoreModule.forFeature(authFeature)

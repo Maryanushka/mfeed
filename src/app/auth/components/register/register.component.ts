@@ -4,11 +4,12 @@ import {ErrorStateMatcher} from '@angular/material/core';
 import { Store, select } from '@ngrx/store';
 import { authActions } from '../store/auth.action';
 import { Observable } from 'rxjs';
-import { isSubmittingSelector } from '../store/auth.selectors';
+import { isSubmittingSelector, validatonErrorSelector } from '../store/auth.selectors';
 import { AuthService } from '../../services/auth/auth.service';
 import { IAuthRequest } from '../../types/authRequest.interface';
 import { IAuthResponce } from '../../types/authResponce.interface';
 import { ActionTypes } from '../store/actionTypes';
+import { IBackendErrors } from '../../types/backendError.interface';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 // export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -26,6 +27,7 @@ import { ActionTypes } from '../store/actionTypes';
 export class RegisterComponent implements OnInit {
 	form: FormGroup;
 	isSubmitting$: Observable<boolean>
+	backendError$: Observable<IBackendErrors | null>
 
   constructor(
 		private fb: FormBuilder, 
@@ -39,6 +41,7 @@ export class RegisterComponent implements OnInit {
   }
 	initializeValues():void {
 		this.isSubmitting$ = this.store.pipe(select(isSubmittingSelector))
+		this.backendError$ = this.store.pipe(select(validatonErrorSelector))
 	}
 
 	initializeForm(): void {

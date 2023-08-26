@@ -3,6 +3,10 @@
 		<h1>Register</h1>
 		<!-- {{isSubmitting$ | async}} -->
 		<a [routerLink]="['/login']" mat-button color="accent">Already have an account ? Login!</a>
+		<app-backend-error-messages 
+			*ngIf="backendError$ | async" 
+			[backendErrors]="backendError$ | async">
+		</app-backend-error-messages>
 		<form [formGroup]="form" (ngSubmit)="onSubmit()">
 				<mat-form-field class="example-full-width" appearance="fill">
 					<mat-label>Name</mat-label>
