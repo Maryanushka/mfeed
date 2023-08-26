@@ -5,6 +5,9 @@ import { Store, select } from '@ngrx/store';
 import { registerAction } from '../store/actions/auth.action';
 import { Observable } from 'rxjs';
 import { isSubmittingSelector } from '../store/selectors/auth.selectors';
+import { AuthService } from '../../services/auth/auth.service';
+import { IAuthRequest } from '../../types/authRequest.interface';
+import { IAuthResponce } from '../../types/authResponce.interface';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 // export class MyErrorStateMatcher implements ErrorStateMatcher {
@@ -25,7 +28,8 @@ export class RegisterComponent implements OnInit {
 
   constructor(
 		private fb: FormBuilder, 
-		private store: Store
+		private store: Store,
+		private authService: AuthService
 		) { }
 
   ngOnInit(): void {
@@ -38,7 +42,7 @@ export class RegisterComponent implements OnInit {
 
 	initializeForm(): void {
 		this.form = new FormGroup({
-			name: new FormControl('', {validators: Validators.required}),
+			username: new FormControl('', {validators: Validators.required}),
 			email: new FormControl('',{ validators: [Validators.required, Validators.email]}),
 			password: new FormControl('',{ validators: [Validators.required, Validators.minLength(4)], updateOn: 'change'}),
 		})
@@ -49,5 +53,16 @@ export class RegisterComponent implements OnInit {
 	onSubmit(): void{
 		console.log(this.form.valid, this.form.value);
 		this.store.dispatch(registerAction(this.form.value))
+		const user: IAuthResponce = {user: this.form.value}
+		this.authService.register(user).subscribe({
+			next(value) {
+					console.log(value);
+					
+			},
+			error(err) {
+					console.log(err);
+					
+			},
+		})
 	}
 }

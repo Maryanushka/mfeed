@@ -11,6 +11,7 @@ import { RegisterComponent } from "src/app/auth/components/register/register.com
 import { LoginComponent } from 'src/app/auth/components/login/login.component'; 
 import { StoreModule } from "@ngrx/store";
 import { authFeature } from "./components/store/reducers/auth.reducer";
+import { AuthService } from "./services/auth/auth.service";
 
 const routes: Routes = [
 	{
@@ -37,6 +38,9 @@ const routes: Routes = [
 	declarations: [
 		RegisterComponent,
 		LoginComponent
+	],
+	providers: [
+		AuthService
 	]
 })
 
