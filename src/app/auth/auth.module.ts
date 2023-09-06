@@ -10,13 +10,13 @@ import { MatButtonModule } from '@angular/material/button';
 import { RegisterComponent } from "src/app/auth/components/register/register.component";
 import { LoginComponent } from 'src/app/auth/components/login/login.component'; 
 import { StoreModule } from "@ngrx/store";
-import { authFeature } from "./components/store/auth.reducer";
+import { authFeature } from "./store/auth.reducer";
 import { AuthService } from "./services/auth/auth.service";
 import { EffectsModule } from "@ngrx/effects";
-import { AuthEffects } from "./components/store/auth.effects";
+import { AuthEffects } from "./store/auth.effects";
 import { BackendErrorMessagesModule } from "../shared/modules/backendErrorMessages/backendErrorMessages.module";
 import { PersistanceService } from "../shared/services/persistance.service";
-import { LoginEffects } from "./components/store/login.effects";
+import { LoginEffects } from "./store/login.effects";
 
 const routes: Routes = [
 	{

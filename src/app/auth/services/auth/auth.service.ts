@@ -26,7 +26,7 @@ export class AuthService {
 	}
 
 	login(data: ILoginRequest): Observable<ICurrentUser> {
-		const url = `${environment.apiUrl}/users`
+		const url = `${environment.apiUrl}/users/login`
 		
 		return this.http
 		.post<IAuthResponce>(url, data)

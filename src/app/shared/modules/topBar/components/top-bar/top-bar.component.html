@@ -1,0 +1,75 @@
+<mat-toolbar >
+	<mat-grid-list cols="6" rowHeight="65px">
+		<mat-grid-tile colspan="2" rowspan="1">
+			<a [routerLink]="['/']" class="logo">MFeed</a>
+		</mat-grid-tile>
+		<mat-grid-tile colspan="4" rowspan="1">
+			<ul class="menu">
+				<ng-container *ngIf="isLoggedIn$ | async">
+
+					<li>
+						<!-- [matRippleCentered]="true"  -->
+						<!-- matRipple  -->
+						<a 	class="example-ripple-container mat-elevation-z4"
+								mat-flat-button
+								[routerLink]="['/articles/new']"
+								color="accent"
+								>
+								<mat-icon>edit_note</mat-icon>
+								New Post
+						</a>
+						<!-- matRipple  -->
+						<a 	class="example-ripple-container mat-elevation-z4"
+								mat-icon-button
+								color="accent"
+								[routerLink]="['/settings']"
+								>
+								<mat-icon>settings</mat-icon>
+						</a>
+						<a 	class="example-ripple-container mat-elevation-z4"
+								mat-icon-button
+								color="accent"
+								[routerLink]="['/profiles', (currentUser$ | async).username]"
+								>
+								<img [src]="(currentUser$ | async).image" alt="">
+								{{(currentUser$ | async).username}}
+						</a>
+					</li>
+				</ng-container>
+				<ng-container *ngIf="isAnonymous$ | async">
+					<li>
+							<a
+								class="login example-ripple-container mat-elevation-z4"
+								matRipple 
+								mat-button 
+								[routerLink]="['/login']"
+								color="primary"
+								[matRippleCentered]="true">
+							<mat-icon>face</mat-icon>
+							Login
+						</a>
+					</li>
+					<li>
+						<a 
+							class="register example-ripple-container mat-elevation-z4"
+							matRipple 
+							mat-button
+							color="accent"
+							[routerLink]="['/register']"
+							[matRippleCentered]="true">
+							<mat-icon>person_add</mat-icon>
+							Register
+						</a>
+					</li>
+				</ng-container>
+			</ul>
+		</mat-grid-tile>
+	</mat-grid-list>
+  <!-- <span class="example-spacer"></span> -->
+  <!-- <button mat-icon-button class="example-icon favorite-icon" aria-label="Example icon-button with heart icon">
+    <mat-icon>favorite</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" aria-label="Example icon-button with share icon">
+    <mat-icon>share</mat-icon>
+  </button> -->
+</mat-toolbar>

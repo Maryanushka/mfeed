@@ -1,14 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import {FormBuilder, FormControl, FormGroup, FormGroupDirective, NgForm, Validators} from '@angular/forms'; 
-import {ErrorStateMatcher} from '@angular/material/core';
+import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms'; 
 import { Store, select } from '@ngrx/store';
-import { authActions } from '../store/auth.action';
+import { authActions } from '../../store/auth.action';
 import { Observable } from 'rxjs';
-import { isSubmittingSelector, validatonErrorSelector } from '../store/auth.selectors';
+import { isSubmittingSelector, validatonErrorSelector } from '../../store/auth.selectors';
 import { AuthService } from '../../services/auth/auth.service';
 import { IAuthRequest } from '../../types/authRequest.interface';
-import { IAuthResponce } from '../../types/authResponce.interface';
-import { ActionTypes } from '../store/actionTypes';
 import { IBackendErrors } from '../../types/backendError.interface';
 
 /** Error when invalid control is dirty, touched, or submitted. */
@@ -58,6 +55,5 @@ export class RegisterComponent implements OnInit {
 		console.log(this.form.valid, this.form.value);
 		const request: IAuthRequest = { user: this.form.value }
 		this.store.dispatch(authActions.authRegister({request}))
-
 	}
 }

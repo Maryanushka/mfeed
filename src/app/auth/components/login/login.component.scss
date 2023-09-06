@@ -20,4 +20,9 @@
 		margin-top: 3rem;
 		min-width: 30vw;
 	}
+	@media (max-width: 800px) {
+		form {
+			min-width: 80vw;
+		}
+	}
 }
