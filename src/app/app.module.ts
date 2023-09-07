@@ -21,8 +21,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { HttpClientModule } from '@angular/common/http';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TopBarModule } from './shared/modules/topBar/topBar.module';
+import { PersistanceService } from './shared/services/persistance.service';
+import { AuthInterceptor } from './shared/services/authInteceptor.interceptor';
 
 @NgModule({
   declarations: [
@@ -45,7 +47,14 @@ import { TopBarModule } from './shared/modules/topBar/topBar.module';
       maxAge: 25,
     }),
   ],
-  providers: [],
+  providers: [
+		PersistanceService,
+		{
+			provide: HTTP_INTERCEPTORS,
+			useClass: AuthInterceptor,
+			multi: true
+		}
+	],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
