@@ -1,7 +1,8 @@
 import { createFeature, createReducer, on } from "@ngrx/store";
-import { authActions } from './auth.action'
+import { authActions } from './regiter.action'
 import { IAuthState } from "../types/authState.interface";
 import { loginActions } from "./login.action";
+import { getCurrentUserActions } from "./getCurrentUser.action";
 
 export const authKey = "AUTH" 
 
@@ -9,7 +10,8 @@ export const initialState: IAuthState = {
 	isSubmitting: false,
 	currentUser: null,
 	isLoggedIn: null,
-	validationErrors: null
+	validationErrors: null,
+	isLoading: false,
 }
 
 export const authReducer = createReducer(
@@ -51,7 +53,26 @@ export const authReducer = createReducer(
 			validationErrors: action.errors,
 			isSubmitting: false
 		})
-	)
+	),
+	on(getCurrentUserActions.authGetCurrentUser, (state): IAuthState => ({
+			...state,
+			isLoading: true
+		}) 
+	),
+	on(getCurrentUserActions.authGetCurrentUserSuccess, (state, action): IAuthState => ({
+			...state,
+			currentUser: action.currentUser,
+			isLoggedIn: true,
+			isLoading: false
+		}) 
+	),
+	on(getCurrentUserActions.authGetCurrentUserFailure, (state): IAuthState => ({
+			...state,
+			currentUser: null,
+			isLoggedIn: false,
+			isLoading: false
+		}) 
+	),
 )
 
 export const authFeature = createFeature({

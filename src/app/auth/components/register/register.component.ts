@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {FormBuilder, FormControl, FormGroup, Validators} from '@angular/forms'; 
 import { Store, select } from '@ngrx/store';
-import { authActions } from '../../store/auth.action';
+import { authActions } from '../../store/regiter.action';
 import { Observable } from 'rxjs';
 import { isSubmittingSelector, validatonErrorSelector } from '../../store/auth.selectors';
 import { AuthService } from '../../services/auth/auth.service';

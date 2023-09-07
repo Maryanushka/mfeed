@@ -3,7 +3,7 @@ import { Injectable, inject } from "@angular/core";
 import { Actions, createEffect, ofType } from "@ngrx/effects";
 import { catchError, map, of, switchMap, tap } from "rxjs";
 
-import { authActions } from "./auth.action";
+import { authActions } from "./regiter.action";
 import { AuthService } from "../services/auth/auth.service";
 import { ICurrentUser } from "../../shared/types/currentUser.interface";
 import { HttpErrorResponse } from "@angular/common/http";
@@ -11,7 +11,7 @@ import { PersistanceService } from "../../shared/services/persistance.service";
 import { Router } from "@angular/router";
 
 @Injectable()
-export class AuthEffects {
+export class RegisterEffects {
 	
 	private actions$ = inject(Actions)
 	private authService = inject(AuthService)

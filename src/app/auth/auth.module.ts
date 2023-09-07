@@ -13,10 +13,11 @@ import { StoreModule } from "@ngrx/store";
 import { authFeature } from "./store/auth.reducer";
 import { AuthService } from "./services/auth/auth.service";
 import { EffectsModule } from "@ngrx/effects";
-import { AuthEffects } from "./store/auth.effects";
+import { RegisterEffects } from "./store/register.effects";
 import { BackendErrorMessagesModule } from "../shared/modules/backendErrorMessages/backendErrorMessages.module";
 import { PersistanceService } from "../shared/services/persistance.service";
 import { LoginEffects } from "./store/login.effects";
+import { GetCurrentUserEffects } from "./store/getCurrentUser.effects";
 
 const routes: Routes = [
 	{
@@ -39,7 +40,7 @@ const routes: Routes = [
 		MatButtonModule,
 		BackendErrorMessagesModule,
 		ReactiveFormsModule,
-		EffectsModule.forFeature([AuthEffects, LoginEffects]),
+		EffectsModule.forFeature([RegisterEffects, LoginEffects, GetCurrentUserEffects]),
 		StoreModule.forFeature(authFeature)
 	],
 	declarations: [
