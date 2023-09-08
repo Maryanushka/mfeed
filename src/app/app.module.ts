@@ -25,6 +25,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TopBarModule } from './shared/modules/topBar/topBar.module';
 import { PersistanceService } from './shared/services/persistance.service';
 import { AuthInterceptor } from './shared/services/authInteceptor.interceptor';
+import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { AuthInterceptor } from './shared/services/authInteceptor.interceptor';
 		FormsModule,
 		AuthModule,
 		TopBarModule,
+		GlobalFeedModule,
 		HttpClientModule,
 		StoreModule.forRoot({}),
     EffectsModule.forRoot([]),
