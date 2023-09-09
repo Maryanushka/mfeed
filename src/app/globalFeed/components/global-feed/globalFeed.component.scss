@@ -1,0 +1,16 @@
+:host {
+	.container {
+		max-width: 1400px;
+		margin: 0 auto;
+		display: flex;
+		.articles {
+			width: 70%;
+			padding: 0 1rem;
+		}
+		.tags	{
+			width: 30%;
+			padding: 0 1rem;
+
+		}
+	}
+}

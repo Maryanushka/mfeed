@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { GlobalFeedComponent } from './components/global-feed/globalFeed.component';
 import { RouterModule } from '@angular/router';
 import { FeedModule } from '../shared/modules/feed/feed.module';
+import { MatGridListModule } from '@angular/material/grid-list';
 
 const routes = [
 	{
@@ -18,6 +19,7 @@ const routes = [
   imports: [
     CommonModule,
 		FeedModule,
+		MatGridListModule,
 		RouterModule.forChild(routes)
   ],
 	exports: [

@@ -6,16 +6,27 @@
 
 :host {
 	::ng-deep {
-		mat-card {
-			// Read the 500 hue from the primary color palette.
-			mat-card-header {
+		.mat-mdc-card {
+			width: 100%;
+			.mat-mdc-card-header {
 				justify-content: space-between;
-				a:last-child {
+				align-items: center;
+				a:nth-child(3) {
 					margin-right: auto;
 				}
+				.mat-mdc-card-avatar {
+					margin-bottom: 0;
+					border-radius: 50%;
+					overflow: hidden;
+					margin-right: 1rem;
+					> img {
+						width: 100%;
+						height: 100%;
+					}
+				}
 			}
-			a {
-				color: #F47CC4;
+			a:not(.mat-mdc-button-ripple) {
+				color: #FAFAFA;
 				text-decoration: none;
 			}
 		}
