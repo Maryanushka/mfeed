@@ -8,6 +8,7 @@
 	::ng-deep {
 		.mat-mdc-card {
 			width: 100%;
+			margin-bottom: 1rem;
 			.mat-mdc-card-header {
 				justify-content: space-between;
 				align-items: center;
@@ -34,6 +35,9 @@
 				color: #FAFAFA;
 				text-decoration: none;
 			}
+		}
+		mat-grid-tile:last-child {
+			height: 3rem !important;
 		}
 	}
 }
