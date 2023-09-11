@@ -3,12 +3,13 @@
 		max-width: 1400px;
 		margin: 0 auto;
 		display: flex;
+		flex-wrap: wrap;
 		.articles {
-			width: 70%;
+			width: calc(70% - 2rem);
 			padding: 0 1rem;
 		}
 		.tags	{
-			width: 30%;
+			width: calc(30% - 2rem);
 			padding: 0 1rem;
 
 		}

@@ -1,0 +1,18 @@
+:host {
+	width: 100%;
+	.banner {
+		width: 100%;
+		background-color: #08b49d;
+		color: #FDECF7;
+		padding: 4rem 1rem;
+		text-align: center;
+		box-shadow: inset 0 0 10px 0 #023B33;
+		h1 {
+			font-weight: bold;
+			font-size: 2.5rem;
+		}
+		p {
+			font-size: 1.5rem;
+		}
+	}
+}

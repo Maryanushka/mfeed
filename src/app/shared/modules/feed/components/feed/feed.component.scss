@@ -13,6 +13,11 @@
 				align-items: center;
 				a:nth-child(3) {
 					margin-right: auto;
+					&:hover {
+						.mat-mdc-card-title {
+							text-decoration: underline;
+						}
+					}
 				}
 				.mat-mdc-card-avatar {
 					margin-bottom: 0;
