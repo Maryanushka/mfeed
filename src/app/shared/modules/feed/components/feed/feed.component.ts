@@ -5,7 +5,8 @@ import { Observable, Subscription } from 'rxjs';
 import { IGetFeedResponce } from '../../types/getFeedResponce.interface';
 import { feedDataSelector, feedErrorSelector, feedIsLoadingSelector } from '../../store/getFeed.selectors';
 import { MatSnackBar, MatSnackBarRef, SimpleSnackBar } from '@angular/material/snack-bar';
-
+import { environment } from '../../../../../../environments/environment';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 @Component({
   selector: 'app-feed',
   templateUrl: './feed.component.html',
@@ -18,10 +19,16 @@ export class FeedComponent implements OnInit, OnDestroy {
 	error$: Observable<string | null>
 	feed$: Observable<IGetFeedResponce | null>
 	errorSubscription: Subscription;
+	limit = environment.limit
+	currentPage: number
+	baseUrl: string
+	queryParamsSubscribtion: Subscription
 
 	constructor(
 		private store: Store,
-		private _snackBar: MatSnackBar
+		private _snackBar: MatSnackBar,
+		private router: Router,
+		private route: ActivatedRoute
 	) {}
 
 	ngOnInit(): void {
@@ -29,12 +36,26 @@ export class FeedComponent implements OnInit, OnDestroy {
 		this.initializeValues()
 	}
 
+	ngOnDestroy(): void {
+    if (this.errorSubscription) {
+      this.errorSubscription.unsubscribe();
+    }
+		this.queryParamsSubscribtion.unsubscribe()
+  }
+
 	initializeValues() {
 		this.feed$ = this.store.pipe(select(feedDataSelector))
 		this.error$ = this.store.pipe(select(feedErrorSelector))
 		this.isLoading$ = this.store.pipe(select(feedIsLoadingSelector))
+		this.baseUrl = this.router.url.split("?")[0]
 	}
-	
+
+	initializeListeners() {
+		this.queryParamsSubscribtion = this.route.queryParams.subscribe((params: Params) => {
+			this.currentPage = Number(params['page'] || '1')
+		})
+	}
+
 	fetchData() {
 		this.store.dispatch(getFeedActions.getFeed({url: this.apiUrlProps}))
 	}
@@ -46,9 +67,5 @@ export class FeedComponent implements OnInit, OnDestroy {
     });
   }
 
-  ngOnDestroy(): void {
-    if (this.errorSubscription) {
-      this.errorSubscription.unsubscribe();
-    }
-  }
+  
 }

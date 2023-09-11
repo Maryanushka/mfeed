@@ -14,6 +14,7 @@ import {MatGridListModule} from '@angular/material/grid-list';
 import {MatCardModule} from '@angular/material/card';
 import {MatChipsModule} from '@angular/material/chips';
 import {MatIconModule} from '@angular/material/icon';
+import { PaginationModule } from '../pagination/pagination.module';
 
 @NgModule({
   declarations: [
@@ -28,13 +29,14 @@ import {MatIconModule} from '@angular/material/icon';
 		MatCardModule,
 		MatChipsModule,
 		MatIconModule,
+		PaginationModule,
 		RouterModule,
 		EffectsModule.forFeature([GetFeedEffects]),
 		StoreModule.forFeature(feedFeature)
   ],
 	providers: [
 		FeedService,
-],
+	],
 	exports: [
 		FeedComponent
 	]

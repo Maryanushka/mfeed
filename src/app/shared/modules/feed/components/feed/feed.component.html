@@ -28,6 +28,11 @@
 		</mat-card>
   </mat-grid-tile>
 	<mat-grid-tile>
-		pagination
+		<app-pagination 
+			[total]="(feed$ | async)?.articlesCount"
+			[limit]="limit"
+			[url]="baseUrl"
+			[currentPage]="currentPage"
+		></app-pagination>
 	</mat-grid-tile>
 </mat-grid-list>
