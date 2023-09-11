@@ -51,14 +51,13 @@ export class PaginationComponent implements OnInit {
 	}
 
   handlePageEvent(e: PageEvent) {
-		console.log(e);
-		// this.route.queryParams.subscribe((params: Params) => {
-		// 	params['page'] = e.pageIndex
-		// })
 		this.router.navigate([],
 			{
 				relativeTo: this.route,
-				queryParams: {page: e.pageIndex + 1},
+				queryParams: {
+					page: e.pageIndex + 1,
+					limit: e.pageSize
+				},
 				queryParamsHandling: 'merge'
 			})
     this.pageEvent = e;
