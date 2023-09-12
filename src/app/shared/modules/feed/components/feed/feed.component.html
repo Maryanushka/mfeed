@@ -17,9 +17,7 @@
 				<h3>{{ article.title }}</h3>
 				<p>{{ article.description }}</p>
 			</a>
-			<mat-chip-listbox aria-label="Fish selection">
-				<mat-chip-option *ngFor="let tag of article.tagList" color="accent">{{ tag }}</mat-chip-option>
-			</mat-chip-listbox>
+			<app-taglist [tags]="article.tagList"></app-taglist>
 		</mat-card-content>
 		<mat-card-actions>
 			<a color="accent" mat-button [routerLink]="['/articles', article.slug]" mat-button>Read more</a>
