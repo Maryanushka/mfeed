@@ -1,0 +1,15 @@
+:host {
+	.container {
+		display: flex;
+		flex-wrap: wrap;
+		.articles {
+			width: calc(70% - 2rem);
+			padding: 0 1rem;
+		}
+		.tags	{
+			width: calc(30% - 2rem);
+			padding: 0 1rem;
+
+		}
+	}
+}

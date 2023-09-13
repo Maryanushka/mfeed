@@ -32,4 +32,4 @@ import { RouterModule } from '@angular/router';
 		PopularTagsComponent
 	]
 })
-export class PopulrTagsModule { }
+export class PopularTagsModule { }

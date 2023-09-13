@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { GlobalFeedComponent } from './components/global-feed/globalFeed.component';
+import { UserFeedComponent } from './components/userFeed/userFeed.component';
 import { RouterModule } from '@angular/router';
 import { FeedModule } from '../shared/modules/feed/feed.module';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -10,14 +10,14 @@ import { FeedTogglerModule } from '../shared/modules/feedToggler/feedToggler.mod
 
 const routes = [
 	{
-		path: '',
-		component: GlobalFeedComponent
+		path: 'feed',
+		component: UserFeedComponent
 	}
 ]
 
 @NgModule({
   declarations: [
-    GlobalFeedComponent
+    UserFeedComponent
   ],
   imports: [
     CommonModule,
@@ -29,7 +29,7 @@ const routes = [
 		RouterModule.forChild(routes)
   ],
 	exports: [
-		GlobalFeedComponent
+		UserFeedComponent
 	]
 })
-export class GlobalFeedModule { }
+export class UserFeedModule { }

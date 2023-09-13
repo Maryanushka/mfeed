@@ -1,7 +1,7 @@
 <!-- <nav mat-tab-nav-bar [tabPanel]="tabPanel"> -->
-<nav mat-tab-nav-bar >
+<nav mat-tab-nav-bar [tabPanel]="tabPanel">
 	<a mat-tab-link *ngIf="isLoggedIn$ | async" [active]="router.url === '/feed'" [routerLink]="['/feed']">Your Feed</a>
   <a mat-tab-link [active]="router.url === '/'" [routerLink]="['/']"> Global Feed </a>
   <a mat-tab-link *ngIf="tagNameProps" (click)="activeLink = '/tags'" [active]="router.url === '/tags'" [routerLink]="['/tags', tagNameProps]">{{ tagNameProps }} </a>
 </nav>
-<!-- <mat-tab-nav-panel #tabPanel></mat-tab-nav-panel> -->
+<mat-tab-nav-panel #tabPanel></mat-tab-nav-panel>
