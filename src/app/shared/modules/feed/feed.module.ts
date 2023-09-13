@@ -16,7 +16,7 @@ import { MatCardModule } from '@angular/material/card';
 import { MatIconModule } from '@angular/material/icon';
 
 import { PaginationModule } from '../pagination/pagination.module';
-import { TagListModule } from '../tagList/tagList.module';
+import { TagListModule } from '../tagList/taglist.module';
 
 @NgModule({
   declarations: [

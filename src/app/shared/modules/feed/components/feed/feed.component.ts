@@ -38,6 +38,7 @@ export class FeedComponent implements OnInit, OnDestroy {
 	ngOnInit(): void {
 		this.initializeValues()
 		this.initializeListeners()
+		this.initErrorSubscription()
 	}
 
 	ngOnDestroy(): void {

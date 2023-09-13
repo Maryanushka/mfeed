@@ -5,6 +5,7 @@ import { RouterModule } from '@angular/router';
 import { FeedModule } from '../shared/modules/feed/feed.module';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { BannerModule } from '../shared/modules/banner/banner.module';
+import { PopulrTagsModule } from '../shared/modules/popularTags/popularTags.module';
 
 const routes = [
 	{
@@ -21,6 +22,7 @@ const routes = [
     CommonModule,
 		FeedModule,
 		MatGridListModule,
+		PopulrTagsModule,
 		BannerModule,
 		RouterModule.forChild(routes)
   ],

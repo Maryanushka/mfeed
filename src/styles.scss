@@ -74,6 +74,7 @@ $theme: mat.define-dark-theme((
 @include mat.all-component-themes($theme);
 body {
 	margin: 0;
+	background-color: var(--mat-toolbar-container-background-color);
 }
 
 // @include mat.all-component-themes($my-theme);
