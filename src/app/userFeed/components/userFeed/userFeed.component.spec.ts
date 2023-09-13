@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { YourFeedComponent } from './userFeed.component';
+import { UserFeedComponent } from './userFeed.component';
 
 describe('GlobalFeedComponent', () => {
-  let component: GlobalFeedComponent;
-  let fixture: ComponentFixture<GlobalFeedComponent>;
+  let component: UserFeedComponent;
+  let fixture: ComponentFixture<UserFeedComponent>;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      declarations: [GlobalFeedComponent]
+      declarations: [UserFeedComponent]
     });
-    fixture = TestBed.createComponent(GlobalFeedComponent);
+    fixture = TestBed.createComponent(UserFeedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

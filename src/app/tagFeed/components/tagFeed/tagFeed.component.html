@@ -1,7 +1,7 @@
 <div class="container">
 	<app-banner></app-banner>
 	<div class="articles">
-		<app-feed-toggler></app-feed-toggler>
+		<app-feed-toggler [tagName]="tagName"></app-feed-toggler>
 		<app-feed [apiUrl]="apiUrl"></app-feed>
 	</div>
 	<div class="tags">

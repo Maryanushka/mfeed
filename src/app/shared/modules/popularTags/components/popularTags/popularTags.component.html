@@ -2,7 +2,12 @@
 <div class="popular-tags-wrapper">
 	<h3>Popular tags</h3>
 	<mat-chip-listbox *ngIf="(popularTags$ | async)">
-		<mat-chip-option multiple  *ngFor="let tag of (popularTags$ | async)" color="accent" [routerLink]="['/tags', tag]" (selectionChange)="selectedValue($event)">{{ tag }}</mat-chip-option>
+		<mat-chip-option 
+			*ngFor="let tag of (popularTags$ | async)" 
+			color="accent" [routerLink]="['/tags', tag]" 
+			(selectionChange)="selectedValue($event)">
+			{{ tag }}
+		</mat-chip-option>
 	</mat-chip-listbox>
 </div>
 <mat-progress-bar *ngIf="isLoading$ | async" mode="indeterminate"></mat-progress-bar>
