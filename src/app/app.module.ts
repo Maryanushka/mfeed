@@ -29,10 +29,12 @@ import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { UserFeedModule } from './userFeed/userFeed.module';
 import { TagFeedModule } from './tagFeed/tagFeed.module';
+import { ArticleComponent } from './artcile/components/article/article.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    ArticleComponent,
   ],
   imports: [
     BrowserModule,
