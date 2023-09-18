@@ -15,6 +15,6 @@ export class ArticleService {
 	getArticle(slug: string): Observable<IArticle> {
 		const url = `${environment.apiUrl}/articles/${slug}`
 
-		return this.http.get<IGetArticleResponse>(url).pipe(map((response: IGetArticleResponse) => response.acticle) )
+		return this.http.get<IGetArticleResponse>(url).pipe(map((response: IGetArticleResponse) => response.article) )
 	}
 }
