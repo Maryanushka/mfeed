@@ -51,11 +51,28 @@
 		margin: 0 auto;
 	}
 	.article-body {
+		padding: 0 1rem;
 		p {
 			margin: 3rem 0;
 			font-size: 1.3rem;
 			line-height: 1.5;
 			color: #EBFFFC;
+		}
+	}
+
+	@media (max-width: 679px) {
+		.article-banner {
+			.article-meta {
+				.button-group {
+					display: flex;
+					justify-content: flex-end;
+					flex-wrap: wrap;
+					a:first-child { 
+						margin-bottom: 1rem;
+						margin-right: 0;
+					}
+				}
+			}
 		}
 	}
 }

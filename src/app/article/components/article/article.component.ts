@@ -1,6 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { getArticleActions } from '../../store/getArticle.action';
+import { deleteArticleActions, getArticleActions } from '../../store/getArticle.action';
 import { ActivatedRoute } from '@angular/router';
 import { IArticle } from '../../../shared/types/article.interface';
 import { Observable, Subscription, combineLatest, combineLatestWith, map } from 'rxjs';
@@ -81,4 +81,8 @@ export class ArticleComponent implements OnInit, OnDestroy {
     });
   }
 
+
+	deleteArticle(): void {
+		this.store.dispatch(deleteArticleActions.deleteArticle({slug: this.slug}))
+	}
 }

@@ -9,3 +9,11 @@ export const getArticleActions = createActionGroup({
     'Get Article Failure': emptyProps(),
   }
 });
+export const deleteArticleActions = createActionGroup({
+  source: 'Delete Article',
+  events: {
+    'Delete Article': props<{ slug: string }>(),
+    'Delete Article Success': emptyProps(),
+    'Delete Article Failure': emptyProps(),
+  }
+});
