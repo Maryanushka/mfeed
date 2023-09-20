@@ -12,6 +12,9 @@ import { ArticleService as SharedArticleService } from '../shared/services/artic
 
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatIconModule } from '@angular/material/icon';
+import { MatButtonModule } from '@angular/material/button';
+import { TagListModule } from '../shared/modules/tagList/taglist.module';
 
 const routes = [
 	{
@@ -29,6 +32,9 @@ const routes = [
 		RouterModule,
 		MatProgressBarModule,
 		MatSnackBarModule,
+		MatIconModule,
+		MatButtonModule,
+		TagListModule,
 		EffectsModule.forFeature([GetArticleEffects]),
 		StoreModule.forFeature(articleFeature),
 		RouterModule.forChild(routes)

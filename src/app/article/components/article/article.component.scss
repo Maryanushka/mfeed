@@ -1,0 +1,61 @@
+:host {
+	.article-banner {
+		background-color: #08b49d;
+		color: #022e28;
+		padding: 4rem 1rem;
+		// text-align: center;
+		box-shadow: inset 0 0 10px 0 #023B33;
+		h1 {
+			font-weight: bold;
+			font-size: 2.5rem;
+			margin-bottom: 2rem;
+		}
+		.article-meta {
+			display: flex;
+			align-items: center;
+			.image {
+				display: flex;
+				img {
+					width: 3rem;
+					height: 3rem;
+					margin-right: 1rem;
+					border-radius: 50%;
+					overflow: hidden;
+					border: 3px solid #023B33;
+				}
+			}
+			.info {
+				display: flex;
+				flex-direction: column;
+				a {
+					color: #023B33;
+					font-size: 1.2rem;
+					margin-bottom: 0.5rem;
+					font-weight: bold;
+					text-decoration-line: underline;
+				}
+				span {
+					color: #06574c;
+				}
+			}
+			.button-group {
+				margin-left: 3rem;
+				a:first-child {
+					margin: 0 1rem;
+				}
+			}
+		}
+	}
+	.container {
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+	.article-body {
+		p {
+			margin: 3rem 0;
+			font-size: 1.3rem;
+			line-height: 1.5;
+			color: #EBFFFC;
+		}
+	}
+}
