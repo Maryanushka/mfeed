@@ -30,6 +30,7 @@ import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
 import { UserFeedModule } from './userFeed/userFeed.module';
 import { TagFeedModule } from './tagFeed/tagFeed.module';
 import { ArticleModule } from './article/article.module';
+import { CreateArticleModule } from './createArticle/createArticle.module';
 
 @NgModule({
   declarations: [
@@ -39,6 +40,7 @@ import { ArticleModule } from './article/article.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+		CreateArticleModule,
 		ArticleModule,
 		ReactiveFormsModule,
 		FormsModule,
