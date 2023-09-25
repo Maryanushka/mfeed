@@ -21,7 +21,7 @@ export class CreateArticleEffects {
 					return createArticleActions.createArticleSuccess({article})
 				}),
 				catchError((errrorResponse: HttpErrorResponse) => {
-					return of(createArticleActions.createArticleFailure({errors: errrorResponse.error.errors}))
+					return of(createArticleActions.createArticleFailure({validationErrors: errrorResponse.error.errors}))
 				})
 			)
 		})
@@ -32,7 +32,7 @@ export class CreateArticleEffects {
 			ofType(createArticleActions.createArticleSuccess),
 			tap(({article}) => {
 				console.log('success');
-				this.router.navigate(['/article', article.slug])
+				this.router.navigate(['/articles', article.slug])
 			})
 		),
 		{dispatch: false}

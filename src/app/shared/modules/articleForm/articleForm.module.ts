@@ -6,7 +6,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
-import { BackendErrorMessagesModule } from '../modules/backendErrorMessages/backendErrorMessages.module';
+import { BackendErrorMessagesModule } from '../backendErrorMessages/backendErrorMessages.module';
 
 @NgModule({
   declarations: [

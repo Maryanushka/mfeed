@@ -14,7 +14,7 @@ export class CreateArticleService {
 	private http = inject(HttpClient)
 
   createArticle(articleInput: IArticleInput): Observable<IArticle> {
-		const url = `${environment.apiUrl}/articles`
+		const url = `${environment.apiUrl}/articles/`
 
 		return this.http.post<ISaveArticleResponse>(url, articleInput).pipe(
 			map((respose: ISaveArticleResponse) => respose.article)

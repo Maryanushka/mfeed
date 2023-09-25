@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, inject, OnInit } from '@angular/core';
-import { IArticleInput } from '../../../types/articleInput.interface';
-import { IBackendErrors } from '../../../../auth/types/backendError.interface';
 import { FormBuilder, FormGroup } from '@angular/forms';
+import { IArticleInput } from '../../../../types/articleInput.interface';
+import { IBackendErrors } from '../../../../../auth/types/backendError.interface';
 
 @Component({
   selector: 'app-article-form',
@@ -25,14 +25,14 @@ export class ArticleFormComponent implements OnInit {
 
 	initializeForm(): void {
 		this.form = this.fb.group({
-			title: this.initialValuesProps.title,
-			description: this.initialValuesProps.description,
-			tagList: this.initialValuesProps.tagList.join(' '),
-			body: this.initialValuesProps.body
+			title: this.initialValuesProps.article.title,
+			description: this.initialValuesProps.article.description,
+			tagList: this.initialValuesProps.article.tagList.join(' '),
+			body: this.initialValuesProps.article.body
 		})
 	}
 
 	onSubmit(): void {
-		this.articleSubmitEvent.emit(this.form.value)
+		this.articleSubmitEvent.emit({article: this.form.value})
 	}
 }

@@ -23,6 +23,6 @@ export const createArticleActions = createActionGroup({
   events: {
     'Create Article': props<{ articleInput: IArticleInput }>(),
     'Create Article Success': props<{ article: IArticle }>(),
-    'Create Article Failure': props<{ errors: IBackendErrors }>(),
+    'Create Article Failure': props<{ validationErrors: IBackendErrors }>(),
   }
 });
