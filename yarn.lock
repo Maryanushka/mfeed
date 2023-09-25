@@ -2662,10 +2662,24 @@
     "@material/theme" "15.0.0-canary.bc9ae6c9c.0"
     tslib "^2.1.0"
 
+"@ngrx/component-store@~16.0.0":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/component-store/-/component-store-16.0.1.tgz#193f98264de6401dcea60d06417698ca7d6866aa"
+  integrity sha512-c52V2bHnKV1MRjA+270oEpRa9hTUD7xP8t1eElYzV0ISisILO8xfWB9/C6XOJtjkK6+j6tHQmtiIGK9gZyIh3g==
+  dependencies:
+    tslib "^2.0.0"
+
 "@ngrx/effects@^16.2.0":
   version "16.2.0"
   resolved "https://registry.yarnpkg.com/@ngrx/effects/-/effects-16.2.0.tgz#90a3572aa5c7bcc3ffc9d55795d0e48f62c51708"
   integrity sha512-zZfq47LNoiRK+uS66Xm36mN07zm11AER1D9lTalX/G6jrV0bywgnAaukNNav9E33ZRrPEnCD8uu9BXZoboEYgA==
+  dependencies:
+    tslib "^2.0.0"
+
+"@ngrx/entity@~16.0.0":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/entity/-/entity-16.0.1.tgz#fc44bf8f39f013b3bc4ec53cf6a60136094bc44b"
+  integrity sha512-LUqcFnH9+Civwq5F3bQ5CIrev6NYG89q918kDnM2ETmhIm7penjLmSj5uR8C4Byl14MpXArKaQuHQeMWovewFQ==
   dependencies:
     tslib "^2.0.0"
 
@@ -2675,6 +2689,11 @@
   integrity sha512-nVqIKWqJnE7pKpcTg6vUpWZtjIwnh66LhJ3hcNLpWRTAzyhQh6EZuYvZX3XSVmdR9XIUltlBCFGCrmTRkeWrTg==
   dependencies:
     tslib "^2.0.0"
+
+"@ngrx/schematics@~16.0.0":
+  version "16.0.1"
+  resolved "https://registry.yarnpkg.com/@ngrx/schematics/-/schematics-16.0.1.tgz#5b36ec7fec391f5bc385339df00ab35037c044ae"
+  integrity sha512-NLRSQF6kjgVFi5/JVTFU6PuuMrQ4lL6SIK81ZPCFEIm3wZH0e4FcQhsKe0D/gqoENTunFquRR4PWr9tdbsa5pg==
 
 "@ngrx/store-devtools@^16.2.0":
   version "16.2.0"
@@ -6494,6 +6513,13 @@ jasmine-core@~5.1.0:
   resolved "https://registry.yarnpkg.com/jasmine-core/-/jasmine-core-5.1.0.tgz#2a52c92ec2e5a4bf674c3de0edbaa10c3875b6fc"
   integrity sha512-bFMMwpKuTZXCuGd51yClFobw5SOtad1kmdWnYO8dNwYV8i01Xj0C2+nyQpSKl1EKxiPfyd1ZgBl/rsusL3aS6w==
 
+jasmine-marbles@~0.9.1:
+  version "0.9.2"
+  resolved "https://registry.yarnpkg.com/jasmine-marbles/-/jasmine-marbles-0.9.2.tgz#5adfee5f72c7f24270687fa64a6e8a8613ffa841"
+  integrity sha512-T7RjG4fRsdiGGzbQZ6Kj39qYt6O1/KIcR4FkUNsD3DUGkd/AzpwzN+xtk0DXlLWEz5BaVdK1SzMgQDVw879c4Q==
+  dependencies:
+    lodash "^4.17.20"
+
 jest-circus@^29.6.2:
   version "29.6.2"
   resolved "https://registry.yarnpkg.com/jest-circus/-/jest-circus-29.6.2.tgz#1e6ffca60151ac66cad63fce34f443f6b5bb4258"
@@ -7121,7 +7147,7 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==
 
-lodash@^4.17.14, lodash@^4.17.21, lodash@^4.7.0:
+lodash@^4.17.14, lodash@^4.17.20, lodash@^4.17.21, lodash@^4.7.0:
   version "4.17.21"
   resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
   integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
