@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { IBackendErrors } from '../../../../../auth/types/backendError.interface';
+import { IBackendErrors } from '../../../../types/backendError.interface';
 
 @Component({
   selector: 'app-backend-error-messages',

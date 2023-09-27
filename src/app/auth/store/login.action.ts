@@ -1,7 +1,7 @@
 import { createActionGroup, props } from '@ngrx/store';
 
 import { ICurrentUser } from '../../shared/types/currentUser.interface';
-import { IBackendErrors } from '../types/backendError.interface';
+import { IBackendErrors } from '../../shared/types/backendError.interface';
 import { ILoginRequest } from '../types/loginRequest.interface';
 
 

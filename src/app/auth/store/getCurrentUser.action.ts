@@ -1,7 +1,7 @@
 import { createActionGroup, emptyProps, props } from '@ngrx/store';
 
 import { ICurrentUser } from '../../shared/types/currentUser.interface';
-import { IBackendErrors } from '../types/backendError.interface';
+import { IBackendErrors } from '../../shared/types/backendError.interface';
 
 
 export const getCurrentUserActions = createActionGroup({

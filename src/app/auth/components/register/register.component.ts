@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 import { isSubmittingSelector, validatonErrorSelector } from '../../store/auth.selectors';
 import { AuthService } from '../../services/auth/auth.service';
 import { IAuthRequest } from '../../types/authRequest.interface';
-import { IBackendErrors } from '../../types/backendError.interface';
+import { IBackendErrors } from '../../../shared/types/backendError.interface';
 
 /** Error when invalid control is dirty, touched, or submitted. */
 // export class MyErrorStateMatcher implements ErrorStateMatcher {

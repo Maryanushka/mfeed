@@ -1,7 +1,7 @@
 import { Component, Input, Output, EventEmitter, inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { IArticleInput } from '../../../../types/articleInput.interface';
-import { IBackendErrors } from '../../../../../auth/types/backendError.interface';
+import { IBackendErrors } from '../../../../types/backendError.interface';
 
 @Component({
   selector: 'app-article-form',

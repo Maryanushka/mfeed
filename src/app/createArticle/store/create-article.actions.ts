@@ -1,22 +1,7 @@
-import { createAction, createActionGroup, emptyProps, props } from '@ngrx/store';
-import { CreateArticleEntity } from './create-article.models';
+import { createActionGroup, props } from '@ngrx/store';
 import { IArticle } from '../../shared/types/article.interface';
 import { IArticleInput } from '../../shared/types/articleInput.interface';
-import { IBackendErrors } from '../../auth/types/backendError.interface';
-
-// export const initCreateArticle = createAction(
-//   '[CreateArticle Page] Init'
-// );
-
-// export const loadCreateArticleSuccess = createAction(
-//   '[CreateArticle/API] Load CreateArticle Success',
-//   props<{ createArticle: CreateArticleEntity[] }>()
-// );
-
-// export const loadCreateArticleFailure = createAction(
-//   '[CreateArticle/API] Load CreateArticle Failure',
-//   props<{ error: any }>()
-// );
+import { IBackendErrors } from '../../shared/types/backendError.interface';
 
 export const createArticleActions = createActionGroup({
   source: 'CreateArticle',

@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Store, select } from '@ngrx/store';
 
 import { IArticleInput } from '../../../shared/types/articleInput.interface';
-import { IBackendErrors } from '../../../auth/types/backendError.interface';
+import { IBackendErrors } from '../../../shared/types/backendError.interface';
 import { isSubmitingCASelector, validationErrorsCASelector } from '../../store/create-article.selectors';
 import { createArticleActions } from '../../store/create-article.actions';
 

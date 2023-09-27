@@ -31,6 +31,7 @@ import { UserFeedModule } from './userFeed/userFeed.module';
 import { TagFeedModule } from './tagFeed/tagFeed.module';
 import { ArticleModule } from './article/article.module';
 import { CreateArticleModule } from './createArticle/createArticle.module';
+import { EditArticleModule } from './editArticle/editArticle.module';
 
 @NgModule({
   declarations: [
@@ -47,6 +48,7 @@ import { CreateArticleModule } from './createArticle/createArticle.module';
 		AuthModule,
 		TopBarModule,
 		GlobalFeedModule,
+		EditArticleModule,
 		UserFeedModule,
 		TagFeedModule,
 		HttpClientModule,
