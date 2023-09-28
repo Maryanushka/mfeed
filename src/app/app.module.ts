@@ -18,20 +18,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AuthModule } from 'src/app/auth/auth.module';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
+
 import { StoreModule } from '@ngrx/store';
 import { EffectsModule } from '@ngrx/effects';
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { TopBarModule } from './shared/modules/topBar/topBar.module';
-import { PersistanceService } from './shared/services/persistance.service';
-import { AuthInterceptor } from './shared/services/authInteceptor.interceptor';
-import { GlobalFeedModule } from './globalFeed/globalFeed.module';
 import { StoreRouterConnectingModule, routerReducer } from '@ngrx/router-store';
-import { UserFeedModule } from './userFeed/userFeed.module';
-import { TagFeedModule } from './tagFeed/tagFeed.module';
-import { ArticleModule } from './article/article.module';
-import { CreateArticleModule } from './createArticle/createArticle.module';
-import { EditArticleModule } from './editArticle/editArticle.module';
+
+import { PersistanceService } from 'src/app/shared/services/persistance.service';
+import { AuthInterceptor } from 'src/app/shared/services/authInteceptor.interceptor';
+
+import { TopBarModule } from 'src/app/shared/modules/topBar/topBar.module';
+import { GlobalFeedModule } from 'src/app/globalFeed/globalFeed.module';
+import { UserFeedModule } from 'src/app/userFeed/userFeed.module';
+import { TagFeedModule } from 'src/app/tagFeed/tagFeed.module';
+import { ArticleModule } from 'src/app/article/article.module';
+import { CreateArticleModule } from 'src/app/createArticle/createArticle.module';
+import { EditArticleModule } from 'src/app/editArticle/editArticle.module';
+import { SettingsModule } from 'src/app/settings/settings.module';
 
 @NgModule({
   declarations: [
@@ -49,6 +53,7 @@ import { EditArticleModule } from './editArticle/editArticle.module';
 		TopBarModule,
 		GlobalFeedModule,
 		EditArticleModule,
+		SettingsModule,
 		UserFeedModule,
 		TagFeedModule,
 		HttpClientModule,

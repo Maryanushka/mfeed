@@ -1,3 +1,4 @@
+<mat-progress-bar *ngIf="isLoading$ | async" mode="indeterminate"></mat-progress-bar>
 <app-article-form 
 	[initialValues]="initialValues$ | async"
 	[isSubmitting]="isSubmitting$ | async"
