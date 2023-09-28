@@ -3,6 +3,7 @@ import { authActions } from './regiter.action'
 import { IAuthState } from "../types/authState.interface";
 import { loginActions } from "./login.action";
 import { getCurrentUserActions } from "./getCurrentUser.action";
+import { updateCurrentUserActions } from "./updateCurrentUser.action";
 
 export const authKey = "AUTH" 
 
@@ -16,6 +17,7 @@ export const initialState: IAuthState = {
 
 export const authReducer = createReducer(
 	initialState, 
+	// register
 	on(authActions.authRegister, (state): IAuthState => ({
 			...state,
 			isSubmitting: true,
@@ -35,6 +37,7 @@ export const authReducer = createReducer(
 			isSubmitting: false,
 		})
 	),
+	// login
 	on(loginActions.authLogin, (state): IAuthState => ({
 			...state,
 			isSubmitting: true,
@@ -54,6 +57,7 @@ export const authReducer = createReducer(
 			isSubmitting: false
 		})
 	),
+	// get current user
 	on(getCurrentUserActions.authGetCurrentUser, (state): IAuthState => ({
 			...state,
 			isLoading: true
@@ -73,6 +77,12 @@ export const authReducer = createReducer(
 			isLoading: false
 		}) 
 	),
+	// update current user
+	on(updateCurrentUserActions.authUpdateCurrentUserSuccess, (state, action): IAuthState => ({
+		...state,
+		currentUser: action.currentUser,
+	}) 
+),
 )
 
 export const authFeature = createFeature({

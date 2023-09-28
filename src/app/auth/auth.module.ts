@@ -7,17 +7,22 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatButtonModule } from '@angular/material/button';
 
+import { EffectsModule } from "@ngrx/effects";
+import { StoreModule } from "@ngrx/store";
+
 import { RegisterComponent } from "src/app/auth/components/register/register.component";
 import { LoginComponent } from 'src/app/auth/components/login/login.component'; 
-import { StoreModule } from "@ngrx/store";
-import { authFeature } from "./store/auth.reducer";
-import { AuthService } from "./services/auth/auth.service";
-import { EffectsModule } from "@ngrx/effects";
-import { RegisterEffects } from "./store/register.effects";
-import { BackendErrorMessagesModule } from "../shared/modules/backendErrorMessages/backendErrorMessages.module";
-import { PersistanceService } from "../shared/services/persistance.service";
-import { LoginEffects } from "./store/login.effects";
-import { GetCurrentUserEffects } from "./store/getCurrentUser.effects";
+
+import { BackendErrorMessagesModule } from "src/app/shared/modules/backendErrorMessages/backendErrorMessages.module";
+
+import { PersistanceService } from "src/app/shared/services/persistance.service";
+
+import { AuthService } from "src/app/auth/services/auth/auth.service";
+import { authFeature } from "src/app/auth/store/auth.reducer";
+import { RegisterEffects } from "src/app/auth/store/register.effects";
+import { LoginEffects } from "src/app/auth/store/login.effects";
+import { GetCurrentUserEffects } from "src/app/auth/store/getCurrentUser.effects";
+import { UpdateCurrentUserEffects } from "src/app/auth/store/updateCurrentUser.effects";
 
 const routes: Routes = [
 	{
@@ -40,7 +45,12 @@ const routes: Routes = [
 		MatButtonModule,
 		BackendErrorMessagesModule,
 		ReactiveFormsModule,
-		EffectsModule.forFeature([RegisterEffects, LoginEffects, GetCurrentUserEffects]),
+		EffectsModule.forFeature([
+			RegisterEffects, 
+			LoginEffects, 
+			GetCurrentUserEffects, 
+			UpdateCurrentUserEffects
+		]),
 		StoreModule.forFeature(authFeature)
 	],
 	declarations: [
