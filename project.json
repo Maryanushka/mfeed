@@ -1,6 +1,6 @@
 {
   "$schema": "node_modules/nx/schemas/project-schema.json",
-  "name": "angular-udemy",
+  "name": "angular-mfeed",
   "projectType": "application",
   "generators": {
     "@schematics/angular:component": {
@@ -37,8 +37,8 @@
           "budgets": [
             {
               "type": "initial",
-              "maximumWarning": "500kb",
-              "maximumError": "1mb"
+              "maximumWarning": "2mb",
+              "maximumError": "2mb"
             },
             {
               "type": "anyComponentStyle",
