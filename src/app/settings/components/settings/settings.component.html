@@ -1,1 +1,108 @@
-<p>settings works!</p>
+<div class="settings" *ngIf="currentUser">
+	<div class="container">
+		<h1>Settings</h1>
+
+			<app-backend-error-messages 
+			*ngIf="backendErrors$ | async" 
+			[backendErrors]="backendErrors$ | async">
+		</app-backend-error-messages>
+		<form [formGroup]="form" (ngSubmit)="onSubmit($event)">
+				<mat-form-field class="example-full-width" appearance="fill">
+					<mat-label>Email</mat-label>
+					
+					<input 
+						type="email" 
+						matInput 
+						placeholder="your_email@example.com"
+						formControlName="email"
+						>
+					
+					<mat-error *ngIf="!form.controls['email'].valid">
+						Please type valid email
+					</mat-error>
+			
+				</mat-form-field>
+				<mat-form-field class="example-full-width" appearance="fill">
+					<mat-label>Username</mat-label>
+					
+					<input 
+						type="text" 
+						matInput 
+						placeholder="Username"
+						formControlName="username"
+						>
+					
+					<mat-error *ngIf="!form.controls['username'].valid">
+						Required
+					</mat-error>
+			
+				</mat-form-field>
+				<mat-form-field class="example-full-width" appearance="fill">
+					<mat-label>Image</mat-label>
+					
+					<input 
+						type="text" 
+						matInput 
+						placeholder="enter url"
+						formControlName="image"
+						>
+					
+					<mat-error *ngIf="!form.controls['image'].valid">
+						Please type valid email
+					</mat-error>
+			
+				</mat-form-field>
+				<mat-form-field class="example-full-width" appearance="fill">
+					<mat-label>Bio</mat-label>
+					
+					<textarea 
+						matInput 
+						placeholder="enter bio"
+						formControlName="bio"
+						></textarea>
+					
+					<mat-error *ngIf="!form.controls['bio'].valid">
+						Required
+					</mat-error>
+			
+				</mat-form-field>
+				<mat-form-field class="example-full-width" appearance="fill">
+					<mat-label>Password</mat-label>
+					<input 
+						matInput 
+						value="" 
+						type="password" 
+						formControlName="password"
+						>
+						<mat-error *ngIf="form.controls['password'].invalid && form.controls['password'].value.length === 0">
+							Password is <strong>required</strong>
+						</mat-error>
+						<mat-error *ngIf="form.controls['password'].value.length < 4">
+							Enter minimum 4 character  
+						</mat-error>
+					</mat-form-field>
+
+				<button 
+						mat-raised-button 
+						color="accent" 
+						matRipple 
+						mat-button
+						type="submit"
+						[disabled]="(isSubmitting$ | async) || form.invalid"
+						>
+						Update
+				</button>
+
+				<button 
+						mat-raised-button 
+						color="warn" 
+						matRipple 
+						mat-button
+						(click)="logout()"
+						>
+						<mat-icon>logout</mat-icon>
+						Logout
+				</button>
+		</form>
+	</div>
+</div>

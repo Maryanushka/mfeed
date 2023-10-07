@@ -4,6 +4,7 @@ import { IAuthState } from "../types/authState.interface";
 import { loginActions } from "./login.action";
 import { getCurrentUserActions } from "./getCurrentUser.action";
 import { updateCurrentUserActions } from "./updateCurrentUser.action";
+import { logoutAction } from "./sync.action";
 
 export const authKey = "AUTH" 
 
@@ -70,19 +71,29 @@ export const authReducer = createReducer(
 			isLoading: false
 		}) 
 	),
-	on(getCurrentUserActions.authGetCurrentUserFailure, (state): IAuthState => ({
+	on(getCurrentUserActions.authGetCurrentUserFailure, (state, action): IAuthState => ({
 			...state,
 			currentUser: null,
 			isLoggedIn: false,
 			isLoading: false
 		}) 
 	),
+	on(logoutAction, (): IAuthState => ({
+			...initialState ,
+			isLoggedIn:false
+		})
+	),
 	// update current user
 	on(updateCurrentUserActions.authUpdateCurrentUserSuccess, (state, action): IAuthState => ({
-		...state,
-		currentUser: action.currentUser,
-	}) 
-),
+			...state,
+			currentUser: action.currentUser,
+		})
+	),
+	on(updateCurrentUserActions.authUpdateCurrentUserFailure, (state, action): IAuthState => ({
+			...state,
+			validationErrors: action.errors
+		})
+	),
 )
 
 export const authFeature = createFeature({

@@ -1,5 +1,12 @@
 import { ICurrentUser } from "./currentUser.interface";
 
-export interface ICurrentUserInput extends ICurrentUser{
-	password: string 
+export interface ICurrentUserInput{
+	user: {
+		password: string 
+		email: string,
+		username: string,
+		bio: string | null,
+		image: string | null,
+		token: string
+	}
 }

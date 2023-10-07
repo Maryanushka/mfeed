@@ -23,6 +23,7 @@ import { RegisterEffects } from "src/app/auth/store/register.effects";
 import { LoginEffects } from "src/app/auth/store/login.effects";
 import { GetCurrentUserEffects } from "src/app/auth/store/getCurrentUser.effects";
 import { UpdateCurrentUserEffects } from "src/app/auth/store/updateCurrentUser.effects";
+import { LogoutEffect } from "./store/logout.effects";
 
 const routes: Routes = [
 	{
@@ -49,7 +50,8 @@ const routes: Routes = [
 			RegisterEffects, 
 			LoginEffects, 
 			GetCurrentUserEffects, 
-			UpdateCurrentUserEffects
+			UpdateCurrentUserEffects,
+			LogoutEffect
 		]),
 		StoreModule.forFeature(authFeature)
 	],
