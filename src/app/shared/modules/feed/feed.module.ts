@@ -17,6 +17,7 @@ import { MatIconModule } from '@angular/material/icon';
 
 import { PaginationModule } from '../pagination/pagination.module';
 import { TagListModule } from '../tagList/taglist.module';
+import { AddToFavoritesModule } from '../add-to-favourites/addToFavourites.module';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { TagListModule } from '../tagList/taglist.module';
 		TagListModule,
 		MatIconModule,
 		PaginationModule,
+		AddToFavoritesModule,
 		RouterModule,
 		EffectsModule.forFeature([GetFeedEffects]),
 		StoreModule.forFeature(feedFeature)

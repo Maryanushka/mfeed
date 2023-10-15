@@ -1,0 +1,7 @@
+<button 
+mat-fab extended 
+(click)="handleLike()"
+[color]="{accent: isFavorited, primary: !isFavorited}">
+<mat-icon>favorite</mat-icon>
+{{ favoritesCount }}
+</button>
