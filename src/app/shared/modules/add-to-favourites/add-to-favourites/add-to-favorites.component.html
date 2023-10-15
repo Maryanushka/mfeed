@@ -1,7 +1,7 @@
 <button 
-mat-fab extended 
+mat-stroked-button  
 (click)="handleLike()"
-[color]="{accent: isFavorited, primary: !isFavorited}">
+[color]="favoriteColor">
 <mat-icon>favorite</mat-icon>
 {{ favoritesCount }}
 </button>

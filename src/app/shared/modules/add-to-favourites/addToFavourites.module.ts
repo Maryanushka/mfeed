@@ -4,6 +4,9 @@ import { AddToFavoritesComponent } from './add-to-favourites/add-to-favorites.co
 
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { AddToFavoritesService } from './services/add-to-favorites.service';
+import { EffectsModule } from '@ngrx/effects';
+import { AddToFavoritesEffects } from './store/addToFavourites.effects';
 
 @NgModule({
   declarations: [
@@ -12,8 +15,12 @@ import { MatIconModule } from '@angular/material/icon';
   imports: [
     CommonModule,
 		MatButtonModule,
-		MatIconModule
+		MatIconModule,
+		EffectsModule.forFeature([AddToFavoritesEffects])
   ],
+	providers: [
+		AddToFavoritesService
+	],
 	exports: [
     AddToFavoritesComponent
   ],
