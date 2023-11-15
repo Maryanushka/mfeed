@@ -36,6 +36,7 @@ import { ArticleModule } from 'src/app/article/article.module';
 import { CreateArticleModule } from 'src/app/createArticle/createArticle.module';
 import { EditArticleModule } from 'src/app/editArticle/editArticle.module';
 import { SettingsModule } from 'src/app/settings/settings.module';
+import { UserProfileModule } from './user-profile/user-profile.module';
 
 @NgModule({
   declarations: [
@@ -57,6 +58,7 @@ import { SettingsModule } from 'src/app/settings/settings.module';
 		UserFeedModule,
 		TagFeedModule,
 		HttpClientModule,
+		UserProfileModule,
 		StoreModule.forRoot({router: routerReducer}),
     EffectsModule.forRoot([]),
 		StoreRouterConnectingModule.forRoot(),

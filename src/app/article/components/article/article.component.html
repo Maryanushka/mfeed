@@ -5,11 +5,11 @@
 		<div class="container" *ngIf="article">
 			<h1>{{ article.title }}</h1>
 			<div class="article-meta">
-				<a [routerLink]="['profiles', article.author.username]" class="image">
+				<a [routerLink]="['/profiles', article.author.username]" class="image">
 					<img [src]="article.author.image" [alt]="article.author.username">
 				</a>
 				<div class="info">
-					<a [routerLink]="['profiles', article.author.username]">{{ article.author.username }}</a>
+					<a [routerLink]="['/profiles', article.author.username]">{{ article.author.username }}</a>
 					<span class="date">{{ article.createdAt }}</span>
 				</div>
 				<div class="button-group" *ngIf="isAuthor$ | async">
