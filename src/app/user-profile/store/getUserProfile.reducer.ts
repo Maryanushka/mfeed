@@ -8,14 +8,17 @@ import { IUserProfileState } from "../types/userProfileState.interface";
 export const USER_PROFILE_KEY = "USER_PROFILE"
 
 const initialState: IUserProfileState = {
-	isLoading: true,
+	isLoading: false,
 	error: null,
 	data: null
 }
 
 export const userProfileReducer = createReducer(
 	initialState,
-	on(getUserProfile.getUserProfile, (state): IUserProfileState => state),
+	on(getUserProfile.getUserProfile, (state): IUserProfileState => ({
+		...state,
+			isLoading: true,
+	})),
 	on(getUserProfile.getUserProfileSuccess, (state, action): IUserProfileState => ({
 			...state,
 			isLoading: false,
